@@ -1,0 +1,79 @@
+#contact > div
+  max-width: $content-width
+  display: grid
+  grid-template-areas: 'title' 'persons' 'address' 'map'
+  row-gap: 5vh
+  column-gap: 10vw
+
+  @include respond-to('small')
+    grid-template-columns: repeat(2, 1fr)
+    grid-template-areas: 'title title' 'address persons' 'map map'
+
+  @include respond-to('medium')
+    grid-template-columns: 1fr 2fr
+    grid-template-areas: 'title title' 'address map' 'persons map'
+    column-gap: 5vw
+
+  h1
+    grid-area: title
+
+  #contact-adresse
+    grid-area: address
+
+    p
+      font-size: .8em
+      opacity: .8
+
+  #contact-personnes
+    grid-area: persons
+
+  #contact-carte
+    grid-area: map
+
+    img
+      display: block
+
+    a
+      position: relative
+      display: block
+
+      $svg-translation: .5em
+
+      div
+        position: absolute
+        right: 2em
+        bottom: 2em
+        left: 2em
+        z-index: 1
+        display: flex
+        flex-direction: row
+        background-color: $color-darker-red
+        color: $color-font-header
+        padding: 1em 1.5em 1em 1.5em
+        transition: background-color $time-base
+
+        span
+          display: flex
+          align-items: center
+
+        svg
+          fill: $color-lighter
+          height: 26px
+          padding-right: $svg-translation
+          transition: padding $time-base
+          margin-left: .5em
+
+      &:hover,
+      &:focus
+
+        div
+          background-color: $color-main-red
+
+        svg
+          padding-left: $svg-translation
+          padding-right: 0
+
+
+  ul
+    @include not-a-list
+    margin-top: .5em

@@ -1,0 +1,51 @@
+<script>
+  (function (window, document) {
+
+    /**
+      * Main menu
+      */
+
+    var menu = document.getElementById('nav'),
+      navToggle = document.getElementById('nav-toggle'),
+      WINDOW_CHANGE_EVENT = ('onorientationchange' in window) ? 'orientationchange':'resize';
+
+    function toggleMenu() {
+      menu.classList.toggle('open');
+    };
+
+    function closeMenu() {
+      if (menu.classList.contains('open')) {
+        toggleMenu();
+      }
+    };
+
+    function toggleHamburger() {
+      navToggle.classList.toggle('is-active');
+    };
+
+    function closeHamburger() {
+      if (navToggle.classList.contains('is-active')) {
+        toggleHamburger();
+      }
+    };
+
+    navToggle.addEventListener('click', function (e) {
+      toggleHamburger();
+      toggleMenu();
+      e.preventDefault();
+    });
+
+
+    /**
+      * Shared listeners
+      */
+
+    window.addEventListener(WINDOW_CHANGE_EVENT, function () {
+      // Main menu
+      closeHamburger();
+      closeMenu();
+    });
+
+
+  })(this, this.document);
+</script>

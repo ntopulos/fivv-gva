@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{page.title}}</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+  <link href="{{ site.baseurl }}/style.css" rel="stylesheet">
+  <link href="assets/favicon.svg" rel="icon" sizes="any" type="image/svg+xml">
+</head>
+<body>
+
+ <div id="visual-header">
+  {% include layout/header.html %}
+
+  <div id="content-header">
+    <div>
+      <div>
+        <div id="introduction">
+          <h2>{{page.header.title}}</h2>
+          <p>{{page.header.introduction}}</p>
+          <ul>
+            <li>
+              <a href="#informations-pratiques">
+                Faire un cours d'essai <em>gratuit</em>
+                {% include layout/svgs/arrow-down.svg %}
+              </a>
+            </li>
+            <li>
+              <a href="#contact">
+                Nous trouver
+                {% include layout/svgs/arrow-down.svg %}
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div>
+        <section id="horaires">
+          <h1>Horaires</h1>
+          {% for d in page.hours %}
+          <h2>{{ d.day }}</h2>
+          <table>
+            {% for a in d.activities %}
+            <tr>
+              <td>{{a.hours}}</td>
+              <td>{{a.description}}</td>
+            </tr>
+            {% endfor %}
+          </table>
+          {% endfor %}
+        </section>
+      </div>
+    </div>
+  </div>
+</div>
+
+<section id="presentation">
+  <div>
+    <h1>École Sơn Long Quyền Thuật</h1>
+    {% capture content_include %}{% include content/presentation.md %}{% endcapture %}
+    {{ content_include | markdownify }}
+  </div>
+</section>
+
+<section id="video">
+  <div>
+    <div>
+      <div class="youtube-player"></div>
+    </div>
+  </div>
+</section>
+
+<section id="informations-pratiques">
+  <div>
+    <h1>Informations pratiques</h1>
+    <div id="cours-essai">
+      <h2>Cours d'essai</h2>
+      {% capture content_include %}{% include content/informations-cours-gratuits.md %}{% endcapture %}
+      {{ content_include | markdownify }}
+    </div>
+
+    <div id="foldables">
+      <div>
+        <div id="tarifs" class="foldable">
+          <h2>Tarifs pratiquants {% include layout/svgs/chevron-down.svg %}</h2>
+
+          <div>
+            <h3>Cours</h3>
+            <div>
+              <table class="title-row">
+                <tr>
+                  <th></th>
+                  <th>Année</th>
+                  <th>Semestre</th>
+                  <th>Mois</th>
+                </tr>
+                {% for c in page.prices.courses %}
+                  <tr>
+                    <th>{{c.type}}</th>
+                    <td>CHF&nbsp;{{c.year}}</td>
+                    <td>CHF&nbsp;{{c.semester}}</td>
+                    <td>CHF&nbsp;{{c.month}}</td>
+                  </tr>
+                {% endfor %}
+              </table>
+            </div>
+            <h3>Licence</h3>
+            <table>
+              {% for l in page.prices.licences %}
+                <tr>
+                  <th>{{l.type}}</th>
+                  <td>CHF&nbsp;{{l.price}}</td>
+                </tr>
+              {% endfor %}
+            </table>
+          </div>
+        </div>
+        <div class="foldable">
+          <h2>Fiche d'inscription {% include layout/svgs/chevron-down.svg %}</h2>
+          <div>
+            <p><a href="/files/vo-vietnam-geneve-formulaire-inscription.pdf" target="blank">Fiche d'inscription - Club de Vo Vietnam de Genève</a> [PDF]</p>
+          </div>
+        </div>
+        <div class="foldable">
+          <h2>Coordonnées bancaires {% include layout/svgs/chevron-down.svg %}</h2>
+          <div>
+
+            <dl>
+              <dt>IBAN</dt>
+              <dd>{{ page.banking-details.iban }}</dd>
+            </dl>
+            <dl>
+              <dt>BIC/SWIFT</dt>
+              <dd>{{ page.banking-details.bic }}</dd>
+            </dl>
+            <dl>
+              <dt>CCP</dt>
+              <dd>{{ page.banking-details.ccp }}</dd>
+            </dl>
+            <dl>
+              <dt>Adresse de la banque</dt>
+              <dd>
+                <address class="vcard">
+                  <span class="fn org">{{ page.banking-details.name }}</span>
+                  <div class="adr">
+                    <span class="street-address">{{ page.banking-details.address.street }}</span><br>
+                    <span class="postal-code">{{ page.banking-details.address.postalcode }}</span> <span class="locality">{{ page.banking-details.address.locality }}</span><br>
+                    <span class="country-name">{{ page.banking-details.address.country }}</span>
+                  </div>
+                </address>
+              </dd>
+            </dl>
+            <dl>
+              <dt>Notre du club</dt>
+              <dd>
+                <address class="vcard">
+                  <span class="fn org">{{ page.banking-details.club.name }}</span>
+                  <div class="adr">
+                    <span class="locality">{{ page.banking-details.club.locality }}</span><br>
+                    <span class="country-name">{{ page.banking-details.club.country }}</span>
+                  </div>
+                </address>
+              </dd>
+            </dl>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section id="contact">
+  <div>
+    <h1>Contact</h1>
+    <div id="contact-adresse">
+      <h3>Adresse</h3>
+      <address class="vcard">
+        <span>{{page.contact.address.place_prefix}} {{page.contact.address.place}}</span>
+        <div class="adr">
+          <span class="street-address">{{page.contact.address.street}}</span><br>
+          <span class="postal-code">{{page.contact.address.postalcode}}</span> <span class="locality">{{page.contact.address.locality}}</span><br>
+          <span class="country-name">{{page.contact.address.country}}</span>
+        </div>
+      </address>
+      <p>{{page.contact.arrival}}</p>
+    </div>
+    <div id="contact-personnes">
+      <h3>Personne de contact</h3>
+      <div>
+        {{page.contact.person.name}}
+        <ul>
+          <li><a href="tel:{{ page.contact.person.telephone | replace: ' (0)', '' |replace:' ','-'}}">{{page.contact.person.telephone}}</a></li>
+          <li><a href="mailto:{{page.contact.person.email}}">{{page.contact.person.email}}</a></li>
+        </ul>
+      </div>
+    </div>
+    <div id="contact-carte">
+      <a href="https://www.google.ch/maps/dir//46.2174995,6.1228448/@46.2174616,6.1212814,17z/data=!4m2!4m1!3e0" target="_blank">
+        <img src="/assets/map.png">
+        <div>
+          <span>Ouvrir sur Google Maps</span>
+          <span>{% include layout/svgs/arrow-right.svg %}</span>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div>
+    <div>
+      <ul>
+        <li><a href="https://www.facebook.com/Vo-Vietnam-Gen%C3%A8ve-Ecole-Son-Long-Quyen-Thuat-155303167837462/" target="blank">Facebook Genève</a></li>
+        <li><a href="https://www.facebook.com/FederationInternationaleVoVietnam" target="blank">Facebook <abbr title="Fédération Internationale de Võ-Viêtnam">FIVV</abbr></a></li>
+        <li><a href="http://vo-vietnam.org/" target="blank">Site officiel <abbr title="Fédération Internationale de Võ-Viêtnam">FIVV</abbr></a></li>
+      </ul>
+    </div>
+    <div>© Võ-Vietnam Genève</div>
+  </div>
+</footer>
+{% include scripts/foldables.js.html %}
+{% include scripts/navigation.js.html %}
+{% include scripts/youtube.js.html %}
+</body>
+</html>

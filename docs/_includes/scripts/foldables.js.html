@@ -1,0 +1,18 @@
+<script>
+  // Foldables
+  document.addEventListener('DOMContentLoaded',
+    function () {
+      var element = document.getElementById("foldables");
+      element.classList.add("js");
+
+      var div, n,
+        v = document.getElementsByClassName("foldable");
+      for (n = 0; n < v.length; n++) {
+        v[n].childNodes[1].addEventListener('click', toggleParent);
+      }
+    });
+
+  function toggleParent() {
+    this.parentNode.classList.toggle('open');
+  }
+</script>

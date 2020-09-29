@@ -1,0 +1,175 @@
+---
+---
+
+@import 'variables'
+@import 'mixins'
+@import 'breakpoints'
+@import 'normalize.css'
+
+@import 'content/header'
+@import 'content/presentation'
+@import 'content/video'
+@import 'content/informations'
+@import 'content/contact'
+
+@import 'hamburgers/hamburgers'
+
+
+html
+    scroll-behavior: smooth
+
+body
+  margin: 0
+  padding: 0
+  font-family: 'Roboto', sans-serif
+  color: $color-font-black
+  line-height: 1.4
+  font-size: $font-size
+  font-weight: normal
+  background-color: $color-background
+
+  & > *:nth-child(odd)
+    background-color: $color-lighter
+
+a
+  color: $color-main-red
+  transition: color $time-base, background-color $time-base
+  text-decoration: none
+  outline: none
+
+  &:hover, &:focus
+    color: $color-secondary
+
+p
+  line-height: 1.618
+
+h1, h2, h3
+  line-height: 1
+
+* > h1:first-child,
+* > h2:first-child,
+* > h3:first-child
+  margin-top: 0
+
+img
+  max-width: 100%
+
+table
+  width: 100%
+  font-weight: lighter
+
+  tr th:first-child
+    padding-right: 1em
+
+  th
+    text-align: left
+
+  td
+    padding: 0
+    text-align: right
+    vertical-align: top
+
+  th,
+  td
+    &:not(:last-child)
+      padding-right: .5em
+
+  th
+    font-weight: 400
+
+address
+  font-style: normal
+
+table.title-row
+
+  tr:first-child th
+    text-align: right
+
+button
+  outline: none
+
+// Structure
+
+// Content
+body > * > div,
+body > * > header
+  max-width: $content-width
+  margin: 0 auto
+  padding: 0 $body-padding
+  box-sizing: border-box
+
+  @include respond-to('small')
+    padding: 0 $content-padding
+
+body > section
+  padding-top: 10vh
+  padding-bottom: 10vh
+  box-sizing: border-box
+  display: flex
+  justify-content: center
+  align-items: center
+
+  @include respond-to('medium')
+    min-height: 100vh
+
+  h1
+    text-align: center
+    margin-bottom: 1.5em
+    $goalFontSize: 42px
+    @include relativeFontSize($goalFontSize, $bkpt-small)
+    @include respond-to('small')
+      font-size: $goalFontSize
+
+  h2
+    font-size: 1.2em
+
+    @include respond-to('small')
+      font-size: 27px
+
+footer
+  background-color: $color-darker-red
+  color: $color-light
+  font-size: .95em
+  text-align: center
+
+  @include respond-to('small')
+    text-align: left
+
+
+  & > div
+    padding-top: 5vh
+    padding-bottom: 5vh
+
+    display: grid
+
+    div:last-child
+      border-top: 4px solid rgba(255,255,255,.05)
+      padding-top: 5vh
+      margin-top: 5vh
+      font-size: .8em
+
+      @include respond-to('small')
+        text-align: right
+
+
+  a
+    color: inherit
+
+  span
+    text-transform: uppercase
+    margin-bottom: .5em
+    display: block
+
+  ul
+    @include not-a-list
+    display: flex
+    justify-content: space-around
+    flex-direction: column
+
+    @include respond-to('small')
+      flex-direction: row
+
+    @media (max-width: $bkpt-small - 1px)
+      li:not(:first-child)
+        margin-top: .5em
+

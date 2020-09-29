@@ -1,0 +1,117 @@
+$info-width: 740px
+
+#informations-pratiques
+  display: block
+
+  & > div
+    max-width: $content-width
+
+  #cours-essai
+    width: $info-width
+    max-width: 100%
+    margin: 10vh auto 15vh
+    background-color: rgba(255,255,255,.5)
+    box-sizing: border-box
+    @include content-tile
+
+    @include respond-to('large')
+      margin-left: 0
+
+    h1
+      text-align: left
+      font-size: 1.8em
+      margin-bottom: 1em
+    p
+      font-size: 1.1em
+      font-weight: 400
+      color: $color-font-light
+
+  dt
+    font-size: .9em
+    opacity: .7
+    text-transform: uppercase
+
+  dd
+    margin: 0
+
+
+#foldables
+  display: flex
+  justify-content: center
+
+
+  @include respond-to('large')
+    justify-content: flex-end
+
+  & > div
+    display: flex
+    flex-direction: column
+    width: 100%
+
+    @include respond-to('medium')
+      width: $info-width
+
+  .foldable
+    background-color: rgba(255,255,255,.8)
+    margin-bottom: $content-padding
+    box-sizing: border-box
+    @include content-tile
+
+    @include respond-to('medium')
+      margin-bottom: $content-padding / 2
+
+    h2
+      position: relative
+      margin: 0
+
+    p,
+    dd,
+    td,
+      color: $color-font-light
+
+    & > div
+
+      & > *:first-child
+        padding-top: $content-padding
+        margin-top: 0
+
+      // Tables h-scroll
+      & > div
+        overflow-x: scroll
+
+    svg
+      $height: 40px
+      height: $height
+      position: absolute
+      transition: transform $time-base
+      right: calc(-1*(#{$body-padding} / 2))
+      bottom: calc(-1*(#{$content-padding} - 4px))
+
+      @include respond-to('small')
+        bottom: calc(-1*(#{$content-padding} * 2/3))
+
+      @include respond-to('medium')
+        right: calc(-1*(#{$content-padding} - 4px))
+        top: -4px
+
+    &.open
+      svg
+        transform: rotate(180deg)
+
+      & > div
+        max-height: 10000px
+
+  // If JS
+  &.js > div
+
+    h2
+      cursor: pointer
+
+    svg
+      display: block
+
+    & > div > div
+      max-height: 0
+      overflow: hidden
+      transition: max-height $time-base
+

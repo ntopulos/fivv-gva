@@ -1,0 +1,10 @@
+@mixin respond-to($breakpoint)
+  @if $breakpoint == 'small'
+    @media (min-width: $bkpt-small)
+      @content
+  @elseif $breakpoint == 'medium'
+    @media (min-width: $bkpt-medium)
+      @content
+  @elseif $breakpoint == 'large'
+    @media (min-width: $bkpt-large)
+      @content
