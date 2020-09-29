@@ -14,7 +14,7 @@ $info-width: 740px
     box-sizing: border-box
     @include content-tile
 
-    @include respond-to('large')
+    @include respond-to('blarge')
       margin-left: 0
 
     h1
@@ -40,7 +40,7 @@ $info-width: 740px
   justify-content: center
 
 
-  @include respond-to('large')
+  @include respond-to('blarge')
     justify-content: flex-end
 
   & > div
@@ -48,7 +48,7 @@ $info-width: 740px
     flex-direction: column
     width: 100%
 
-    @include respond-to('medium')
+    @include respond-to('bmedium')
       width: $info-width
 
   .foldable
@@ -57,7 +57,7 @@ $info-width: 740px
     box-sizing: border-box
     @include content-tile
 
-    @include respond-to('medium')
+    @include respond-to('bmedium')
       margin-bottom: $content-padding / 2
 
     h2
@@ -87,10 +87,10 @@ $info-width: 740px
       right: calc(-1*(#{$body-padding} / 2))
       bottom: calc(-1*(#{$content-padding} - 4px))
 
-      @include respond-to('small')
+      @include respond-to('bsmall')
         bottom: calc(-1*(#{$content-padding} * 2/3))
 
-      @include respond-to('medium')
+      @include respond-to('bmedium')
         right: calc(-1*(#{$content-padding} - 4px))
         top: -4px
 

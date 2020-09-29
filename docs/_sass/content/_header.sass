@@ -18,11 +18,11 @@ header
   @media (max-width: $bkpt-medium)
     padding-top: $body-padding !important
 
-  // @include respond-to('small')
+  // @include respond-to('bsmall')
   grid-template-columns: auto auto
   grid-template-areas: 'logo button' 'nav nav'
 
-  @include respond-to('medium')
+  @include respond-to('bmedium')
     height: $header-height
     grid-template-areas: 'logo nav'
 
@@ -30,7 +30,7 @@ header
     grid-area: logo
     justify-content: center
 
-    @include respond-to('small')
+    @include respond-to('bsmall')
       justify-content: start
 
   & > div:last-of-type
@@ -38,10 +38,10 @@ header
     align-items: center
     justify-content: center
 
-    @include respond-to('small')
+    @include respond-to('bsmall')
       justify-content: flex-end
 
-    @include respond-to('medium')
+    @include respond-to('bmedium')
       display: none
 
   #nav
@@ -88,7 +88,7 @@ header
         li:not(:last-child)
           margin-bottom: .5em
 
-      @include respond-to('medium')
+      @include respond-to('bmedium')
         flex-direction: row
 
         li.optional
@@ -112,7 +112,7 @@ header
         background-color: $color-lighter
         color: $color-font-black
 
-      @include respond-to('medium')
+      @include respond-to('bmedium')
         padding: 0 0 .5em 0
         border-bottom: 2px solid transparent
         background-color: transparent
@@ -145,7 +145,7 @@ header
     box-sizing: border-box
     margin-top: 1em
 
-    @include respond-to('large')
+    @include respond-to('blarge')
       grid-template-columns: 3fr 2fr
       grid-template-areas: 'introduction hours'
       grid-gap: 5%
@@ -189,7 +189,7 @@ header
           transition: color $time-base*2, background-color $time-base*2
           font-size: 1.2em
 
-          @include respond-to('small')
+          @include respond-to('bsmall')
             font-size: 1em
 
           svg
@@ -206,7 +206,7 @@ header
             svg
               fill: $color-font-black
 
-      @include respond-to('small')
+      @include respond-to('bsmall')
         flex-direction: row
 
         li

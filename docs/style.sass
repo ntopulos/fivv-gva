@@ -98,7 +98,7 @@ body > * > header
   padding: 0 $body-padding
   box-sizing: border-box
 
-  @include respond-to('small')
+  @include respond-to('bsmall')
     padding: 0 $content-padding
 
 body > section
@@ -109,7 +109,7 @@ body > section
   justify-content: center
   align-items: center
 
-  @include respond-to('medium')
+  @include respond-to('bmedium')
     min-height: 100vh
 
   h1
@@ -117,13 +117,13 @@ body > section
     margin-bottom: 1.5em
     $goalFontSize: 42px
     @include relativeFontSize($goalFontSize, $bkpt-small)
-    @include respond-to('small')
+    @include respond-to('bsmall')
       font-size: $goalFontSize
 
   h2
     font-size: 1.2em
 
-    @include respond-to('small')
+    @include respond-to('bsmall')
       font-size: 27px
 
 footer
@@ -132,7 +132,7 @@ footer
   font-size: .95em
   text-align: center
 
-  @include respond-to('small')
+  @include respond-to('bsmall')
     text-align: left
 
 
@@ -148,7 +148,7 @@ footer
       margin-top: 5vh
       font-size: .8em
 
-      @include respond-to('small')
+      @include respond-to('bsmall')
         text-align: right
 
 
@@ -166,7 +166,7 @@ footer
     justify-content: space-around
     flex-direction: column
 
-    @include respond-to('small')
+    @include respond-to('bsmall')
       flex-direction: row
 
     @media (max-width: $bkpt-small - 1px)
