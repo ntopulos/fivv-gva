@@ -1,7 +1,7 @@
 ---
 layout: main
 title: Võ-Viêtnam Genève | FIVV | École Sơn Long Quyền Thuật
-description: 'Salle de Genève de l''École Sơn Long Quyền Thuật, membre de la Fédération Internationale de Võ-Việt-Nam. Enseignement des arts martiaux traditionnels vietnamiens.'
+description: "Salle de Genève de l'École Sơn Long Quyền Thuật, membre de la Fédération Internationale de Võ-Việt-Nam. Enseignement des arts martiaux traditionnels vietnamiens."
 header:
     title: École traditionnelle d’art martiaux
     introduction: "Le programme de l'école s'oriente sur les axes&#8239;: santé, technique, travail artistique et étude du combat."
