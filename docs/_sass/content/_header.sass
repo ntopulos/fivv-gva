@@ -1,7 +1,3 @@
-@import '../variables'
-@import '../mixins'
-@import '../breakpoints'
-
 #visual-header
   background-color: $color-main-red
   background: linear-gradient(150deg, $color-main-red 0%, $color-main-red 60%, lighten($color-main-red,2%) 60%, lighten($color-main-red,2%) 100%)
@@ -12,7 +8,7 @@
 header
   display: grid
   color: $color-font-header
-  grid-template-areas: 'logo' 'button' 'nav'
+  grid-template-areas: 'logo button' 'nav nav'
   grid-gap: 1em
 
   @media (max-width: $bkpt-medium)
@@ -20,7 +16,6 @@ header
 
   @media (min-width: $bkpt-small)
     grid-template-columns: auto auto
-    grid-template-areas: 'logo button' 'nav nav'
 
   @media (min-width: $bkpt-medium)
     height: $header-height

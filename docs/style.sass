@@ -3,7 +3,6 @@
 
 @import 'variables'
 @import 'mixins'
-@import 'breakpoints'
 @import 'normalize/normalize/import-now'
 
 @import 'content/header'
@@ -98,7 +97,7 @@ body > * > header
   padding: 0 $body-padding
   box-sizing: border-box
 
-  @include respond-to('bsmall')
+  @media (min-width: $bkpt-small)
     padding: 0 $content-padding
 
 body > section
@@ -109,7 +108,7 @@ body > section
   justify-content: center
   align-items: center
 
-  @include respond-to('bmedium')
+  @media (min-width: $bkpt-medium)
     min-height: 100vh
 
   h1
@@ -117,13 +116,13 @@ body > section
     margin-bottom: 1.5em
     $goalFontSize: 42px
     @include relativeFontSize($goalFontSize, $bkpt-small)
-    @include respond-to('bsmall')
+    @media (min-width: $bkpt-small)
       font-size: $goalFontSize
 
   h2
     font-size: 1.2em
 
-    @include respond-to('bsmall')
+    @media (min-width: $bkpt-small)
       font-size: 27px
 
 footer
@@ -132,7 +131,7 @@ footer
   font-size: .95em
   text-align: center
 
-  @include respond-to('bsmall')
+  @media (min-width: $bkpt-small)
     text-align: left
 
 
@@ -148,7 +147,7 @@ footer
       margin-top: 5vh
       font-size: .8em
 
-      @include respond-to('bsmall')
+      @media (min-width: $bkpt-small)
         text-align: right
 
 
@@ -166,7 +165,7 @@ footer
     justify-content: space-around
     flex-direction: column
 
-    @include respond-to('bsmall')
+    @media (min-width: $bkpt-small)
       flex-direction: row
 
     @media (max-width: $bkpt-small - 1px)
