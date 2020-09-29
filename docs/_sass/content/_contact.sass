@@ -9,7 +9,7 @@
   //   grid-template-columns: repeat(2, 1fr)
   //   grid-template-areas: 'title title' 'address persons' 'map map'
 
-  @include respond-to(890px)
+  @media (min-width: 890px)
     grid-template-columns: 1fr 2fr
     grid-template-areas: 'title title' 'address map' 'persons map'
     column-gap: 5vw
