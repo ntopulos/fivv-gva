@@ -1,7 +1,7 @@
 ---
 layout: main
 title: Võ-Viêtnam Genève | FIVV | École Sơn Long Quyền Thuật
-header: 
+header:
     title: École traditionnelle d’art martiaux
     introduction: "Le programme de l'école s'oriente sur les axes&#8239;: santé, technique, travail artistique et étude du combat."
 hours:
@@ -76,5 +76,3 @@ banking-details:
     country: Switzerland
 
 ---
-
-this is some content
