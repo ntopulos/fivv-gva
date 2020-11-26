@@ -130,7 +130,6 @@ footer
   background-color: $color-darker-red
   color: $color-light
   font-size: .95em
-  text-align: center
 
   @media (min-width: $bkpt-small)
     text-align: left
@@ -143,13 +142,9 @@ footer
     display: grid
 
     div:last-child
-      border-top: 4px solid rgba(255,255,255,.05)
-      padding-top: 5vh
       margin-top: 5vh
       font-size: .8em
-
-      @media (min-width: $bkpt-small)
-        text-align: right
+      text-align: center
 
 
   a
@@ -163,11 +158,19 @@ footer
   ul
     @include not-a-list
     display: flex
-    justify-content: space-around
+    justify-content: center
     flex-direction: column
 
     @media (min-width: $bkpt-small)
       flex-direction: row
+
+      li:not(:last-child)
+        margin-right: 2em
+
+        &:after
+          content: '|'
+          margin-left: 2em
+          opacity: .5
 
     @media (max-width: $bkpt-small - 1px)
       li:not(:first-child)

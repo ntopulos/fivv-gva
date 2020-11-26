@@ -5,6 +5,7 @@ description: "Salle de Genève de l'École Sơn Long Quyền Thuật, membre de 
 header:
     title: École traditionnelle d’art martiaux
     introduction: "Le programme de l'école s'oriente sur les axes&#8239;: santé, technique, travail artistique et étude du combat."
+# notification: "Attention en raison de la COVID, les horaires sont modifiés et les cours ont lieu à distance sur Zoom."
 hours:
     -
         day: Mardi

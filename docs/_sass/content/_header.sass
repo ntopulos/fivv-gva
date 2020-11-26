@@ -135,34 +135,36 @@ header
   & > div
     display: grid
     grid-template-columns: 1fr
-    grid-template-areas: 'introduction' 'hours'
+    grid-template-areas: 'n' 'introduction' 'hours'
     padding-bottom: 6vh
     box-sizing: border-box
     margin-top: 1em
 
     @media (min-width: $bkpt-large)
       grid-template-columns: 3fr 2fr
-      grid-template-areas: 'introduction hours'
+      grid-template-areas: 'n n' 'introduction hours'
       grid-gap: 5%
 
     & > div:first-child
       grid-area: introduction
 
-    #introduction h2
-      font-size: $h2-foot-size
-      color: $color-secondary
-      padding-bottom: 0
-      margin-bottom: $h2-margin-bottom
+    #introduction
 
-    em
-      font-style: normal
-      font-weight: 700
+      h2
+        font-size: $h2-foot-size
+        color: $color-secondary
+        padding-bottom: 0
+        margin-bottom: $h2-margin-bottom
 
-    p
-      font-size: 2.1em
-      line-height: 1.3
-      font-weight: bold
-      margin: 0 0 8vh
+      em
+        font-style: normal
+        font-weight: 700
+
+      p
+        font-size: 2.1em
+        line-height: 1.3
+        font-weight: bold
+        margin: 0 0 8vh
 
     ul
       @include not-a-list
@@ -231,3 +233,32 @@ header
         tr td:first-child
           padding: 0 2em 0 0
           text-align: left
+
+    & > div:nth-child(2)
+      grid-area: hours
+
+    & > div:not(:last-child)
+      order: 1
+
+    #notification
+      grid-area: n
+      margin-bottom: 2em
+      background-color: rgba(#fff,.1)
+      padding: 1.5em
+      display: flex
+      flex-direction: row
+
+      div
+        display: flex
+        align-items: center
+
+      p
+        margin: 0
+
+      svg
+        fill: rgba(#fff,.5)
+        height: 1.5em
+        margin-right: 1em
+
+      // @media (min-width: $bkpt-large)
+      //   margin-bottom: 0
