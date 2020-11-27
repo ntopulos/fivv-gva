@@ -60,7 +60,7 @@ contact:
     person:
         name: M. Thaddée Mieusset
         telephone: +41 (0) 79 845 81 72
-        email: thadd@bluewin.ch
+        email: thaddeemieusset@gmail.com
     arrival: "Par le chemin Buisson&nbsp;: tournez à gauche lorsque vous arrivez au bout suivez les panneaux indiquant les salles de sport."
 banking-details:
   name: PostFinance Ltd
