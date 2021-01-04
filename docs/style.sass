@@ -106,11 +106,35 @@ body > section
   padding-bottom: 10vh
   box-sizing: border-box
   display: flex
+  position: relative
   justify-content: center
   align-items: center
 
-  @media (min-width: $bkpt-medium)
-    min-height: 100vh
+  // @media (min-width: $bkpt-medium)
+  min-height: 100vh
+
+  // next
+  & > a
+    $height: 1.3em
+    $padding: .2em
+    position: absolute
+    bottom: calc(5vh - 1 / 2 * (#{$height} + #{$padding}))
+    opacity: .1
+    transition: all $time-base
+    display: none
+    height: $height
+    padding-bottom: $padding
+
+    @media (min-height: 376px)
+      display: block
+
+    &:hover, &:focus
+      opacity: .3
+      padding-bottom: 0
+      padding-top: $padding
+
+    svg
+      height: $height
 
   h1
     text-align: center
