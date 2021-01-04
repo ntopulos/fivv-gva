@@ -16,7 +16,6 @@ hours:
       -
         hours: '19h15 - 20h45'
         description: Adultes tous niveaux
-
   -
     day: Vendredi
     activities:
@@ -24,7 +23,7 @@ hours:
         hours: '18h00 - 19h30'
         description: Adultes tous niveaux
 video:
-  youtube_video_id: ox6CldxJUzE
+  youtube_video_id: m09E_8-NsdU
 prices:
   courses:
     -
