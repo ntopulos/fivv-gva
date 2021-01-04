@@ -49,16 +49,20 @@
           {% for d in page.hours %}
           <h2>{{ d.day }}</h2>
           <table>
-            <tr>
-              <th>Horaire</th>
-              <th>Cours</th>
-            </tr>
-            {% for a in d.activities %}
-            <tr>
-              <td>{{a.hours}}</td>
-              <td>{{a.description}}</td>
-            </tr>
-            {% endfor %}
+            <thead>
+              <tr>
+                <th>Horaire</th>
+                <th>Cours</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for a in d.activities %}
+              <tr>
+                <td>{{a.hours}}</td>
+                <td>{{a.description}}</td>
+              </tr>
+              {% endfor %}
+            </tbody>
           </table>
           {% endfor %}
         </section>
