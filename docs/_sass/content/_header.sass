@@ -167,20 +167,27 @@ header
         margin: 0 0 8vh
 
     ul
+      $square-size: 160px
+
       @include not-a-list
       display: flex
       flex-direction: column
 
       li
-        &:first-child
-          margin-bottom: 1em
+
+        &:not(:last-child)
+          margin-bottom: 5vh
+
+          @media (min-width: $bkpt-small)
+            margin-bottom: 0
 
         a
           $tile-padding: 1em
 
           display: block
+          box-sizing: border-box
           background-color: $color-darker-red
-          height: 120px
+          height: $square-size
           padding: $tile-padding
           position: relative
           transition: color $time-base*2, background-color $time-base*2
@@ -196,26 +203,39 @@ header
             bottom: $tile-padding
             right: $tile-padding
 
-          &:hover, &:focus
-            background-color: $color-lighter
-            color: $color-font-black
+      li:not(#facebook) a
+        &:hover, &:focus
+          background-color: $color-lighter
+          color: $color-font-black
 
-            svg
-              fill: $color-font-black
+          svg
+            fill: $color-font-black
+
+      li#facebook a
+        border: 1px solid $color-lighter
+        background-color: transparent
+
+        svg
+          transform: rotate(225deg)
 
       @media (min-width: $bkpt-small)
         flex-direction: row
 
-        li
+        li:not(:last-child)
           margin-right: 5%
 
-          a
-            width: 120px
+        a
+          width: $square-size
 
     #horaires
       background-color: rgba(lighten($color-main-red,10%),.4)
       padding: 2em
-      margin-top: calc(#{$h2-foot-size} + #{$h2-margin-bottom})
+      margin-top: 5vh
+      flex: 1
+
+      @media (min-width: $bkpt-small)
+        margin-top: calc(#{$h2-foot-size} + #{$h2-margin-bottom})
+
 
       h1
         font-size: 1.5em
@@ -236,6 +256,7 @@ header
 
     & > div:nth-child(2)
       grid-area: hours
+      display: flex
 
     & > div:not(:last-child)
       order: 1
