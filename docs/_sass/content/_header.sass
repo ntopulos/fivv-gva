@@ -237,7 +237,6 @@ header
       @media (min-width: $bkpt-small)
         margin-top: calc(#{$h2-foot-size} + #{$h2-margin-bottom})
 
-
       h1
         font-size: 1.5em
 
@@ -247,6 +246,10 @@ header
         font-size: 1.2em
 
       table
+        // Hide header row (for accessibility only)
+        tr:first-child
+          display: none
+
         // Hours column
         td:first-child
           white-space: nowrap

@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" aria-label="Signe attention">
+  <path d="M256 0a256 256 0 100 512 256 256 0 000-512zm0 472a216 216 0 110-432 216 216 0 010 432z"/>
+  <path d="M256 129c-11 0-20 9-20 20v129a20 20 0 1040 0V149c0-11-9-20-20-20z"/>
+  <circle cx="256" cy="349.2" r="27"/>
+</svg>
