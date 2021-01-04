@@ -214,7 +214,9 @@
       <div>
         {{page.contact.person.name}}
         <ul>
-          <li><a href="tel:{{ page.contact.person.telephone | replace: ' (0)', '' |replace:' ','-'}}">{{page.contact.person.telephone}}</a></li>
+          {% for t in page.contact.person.telephones %}
+            <li><a href="tel:{{t|replace:' (0)',''|replace:' ','-'}}">{{t}}</a></li>
+          {% endfor %}
           <li><a href="mailto:{{page.contact.person.email}}">{{page.contact.person.email}}</a></li>
         </ul>
       </div>

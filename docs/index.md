@@ -59,7 +59,9 @@ contact:
     country: Suisse
   person:
     name: M. Thaddée Mieusset
-    telephone: +41 (0) 79 845 81 72
+    telephones:
+      - +41 (0) 79 845 81 72
+      - +33 (0) 6 01 41 91 14
     email: thaddeemieusset@gmail.com
   arrival: "Par le chemin Buisson&nbsp;: tournez à gauche lorsque vous arrivez au bout suivez les panneaux indiquant les salles de sport."
 banking-details:
