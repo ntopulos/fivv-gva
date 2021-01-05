@@ -221,6 +221,10 @@ header
       li#facebook a
         border: 1px solid $color-lighter
         background-color: transparent
+        transition: border $time-base
+
+        &:hover, &:focus
+          border-color: rgba($color-lighter, .5)
 
         svg
           transform: rotate(-45deg)
