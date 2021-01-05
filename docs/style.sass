@@ -101,8 +101,8 @@ body > * > header
   padding: 0 $body-padding
   box-sizing: border-box
 
-  @media (min-width: $bkpt-small)
-    padding: 0 $content-padding
+  // @media (min-width: $bkpt-small)
+  //   padding: 0 $content-padding
 
 body > section
   padding-top: 10vh
@@ -166,10 +166,9 @@ footer
     padding-bottom: 5vh
     display: grid
     grid-template-columns: repeat(2,auto)
+    position: relative
 
     div:last-child
-      // margin-top: 5vh
-      // font-size: .8em
       text-align: right
 
   a
@@ -201,14 +200,14 @@ footer
       li:not(:first-child)
         margin-top: .5em
 
-  & > a
+  & > div > a
     $height: 40px
     $padding: 5px
     $total: $height + 2 * $padding
     position: absolute
-    transition: all $time-base
+    transition: opacity $time-base
     display: block
-    right: $content-padding
+    right: $body-padding
     top: - $total / 2
     background: $color-darker-red
     border: 3px solid #ece2d0
