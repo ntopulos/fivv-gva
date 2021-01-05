@@ -1,0 +1,87 @@
+footer
+  background-color: $color-darker-red
+  color: $color-light
+  font-size: .85em
+  position: relative
+
+  @media (min-width: $bkpt-small)
+    text-align: left
+
+  & > div
+    padding-top: 5vh
+    padding-bottom: 5vh
+    display: grid
+    position: relative
+    text-align: center
+
+    @media (min-width: $bkpt-small)
+      grid-template-columns: repeat(2,auto)
+      text-align: left
+
+    div:last-child
+      margin-top: 1.5em
+
+      @media (min-width: $bkpt-small)
+        margin-top: 0
+        text-align: right
+
+  a
+    color: inherit
+
+  span
+    text-transform: uppercase
+    margin-bottom: .5em
+    display: block
+
+  ul
+    @include not-a-list
+    display: flex
+    justify-content: left
+    flex-direction: column
+
+    @media (min-width: $bkpt-small)
+      flex-direction: row
+
+      li:not(:last-child)
+        margin-right: 1em
+
+        &:after
+          content: '|'
+          margin-left: 1em
+          opacity: .5
+
+    @media (max-width: $bkpt-small - 1px)
+      li:not(:first-child)
+        margin-top: .5em
+
+  // return-to-top
+  & > div > a
+    $height: 40px
+    $padding: 5px
+    $total: $height + 2 * $padding
+    position: absolute
+    transition: opacity $time-base
+    display: block
+    right: $body-padding
+    top: - $total / 2
+    background: $color-darker-red
+    border: 3px solid #ece2d0
+    box-sizing: border-box
+    padding: $padding
+    border-radius: $total / 2
+
+
+    @media (min-width: $bkpt-small)
+      right: $content-padding
+
+    svg
+      display: block
+      height: $height * 2 / 3
+      transform: rotate(-90deg)
+      fill: #fff
+      opacity: .7
+      transition: all $time-base
+
+    &:hover, &:focus
+      svg
+        opacity: .9
