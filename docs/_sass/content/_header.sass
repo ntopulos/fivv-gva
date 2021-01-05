@@ -178,12 +178,11 @@ header
       li
         flex-grow: 1
 
-
         @media (min-width: $bkpt-large)
           flex-grow: 0
 
         &:not(:last-child)
-          margin-bottom: 5vh
+          margin-bottom: 1rem
 
           @media (min-width: $bkpt-large)
             margin-bottom: 0
@@ -203,7 +202,7 @@ header
             height: $square-size
 
           svg
-            fill: $color-lighter
+            fill: rgba($color-lighter,.8)
             height: 30px
             position: absolute
             bottom: $tile-padding
@@ -223,11 +222,16 @@ header
         background-color: transparent
         transition: border $time-base
 
-        &:hover, &:focus
-          border-color: rgba($color-lighter, .5)
-
         svg
           transform: rotate(-45deg)
+          transition: fill $time-base
+
+        &:hover, &:focus
+          border-color: rgba($color-lighter,.8)
+
+          svg
+            fill: $color-lighter
+
 
       @media (min-width: $bkpt-large)
         flex-direction: row
