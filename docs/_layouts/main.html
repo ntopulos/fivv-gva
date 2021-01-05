@@ -17,56 +17,52 @@
 
   <div id="content-header">
     <div>
-      <div>
-        <div id="introduction">
-          <h2>{{page.header.title}}</h2>
-          <p>{{page.header.introduction}}</p>
-          <ul>
-            <li>
-              <a href="#informations-pratiques">
-                Faire un cours d'essai <em>gratuit</em>
-                {% include layout/svgs/arrow-right.svg %}
-              </a>
-            </li>
-            <li>
-              <a href="#contact">
-                Nous trouver
-                {% include layout/svgs/arrow-right.svg %}
-              </a>
-            </li>
-            <li id="facebook">
-              <a target="_blank" href="https://www.facebook.com/Vo-Vietnam-Gen%C3%A8ve-Ecole-Son-Long-Quyen-Thuat-155303167837462">
-                Facebook
-                {% include layout/svgs/arrow-right.svg %}
-              </a>
-            </li>
-          </ul>
-        </div>
+      <div id="introduction">
+        <h2>{{page.header.title}}</h2>
+        <p>{{page.header.introduction}}</p>
       </div>
-      <div>
-        <section id="horaires">
-          <h1>Horaires</h1>
-          {% for d in page.hours %}
-          <h2>{{ d.day }}</h2>
-          <table>
-            <thead>
-              <tr>
-                <th>Horaire</th>
-                <th>Cours</th>
-              </tr>
-            </thead>
-            <tbody>
-              {% for a in d.activities %}
-              <tr>
-                <td>{{a.hours}}</td>
-                <td>{{a.description}}</td>
-              </tr>
-              {% endfor %}
-            </tbody>
-          </table>
-          {% endfor %}
-        </section>
-      </div>
+      <ul>
+        <li>
+          <a href="#informations-pratiques">
+            Faire un cours d'essai <em>gratuit</em>
+            {% include layout/svgs/arrow-right.svg %}
+          </a>
+        </li>
+        <li>
+          <a href="#contact">
+            Nous trouver
+            {% include layout/svgs/arrow-right.svg %}
+          </a>
+        </li>
+        <li id="facebook">
+          <a target="_blank" href="https://www.facebook.com/Vo-Vietnam-Gen%C3%A8ve-Ecole-Son-Long-Quyen-Thuat-155303167837462">
+            Facebook
+            {% include layout/svgs/arrow-right.svg %}
+          </a>
+        </li>
+      </ul>
+      <section id="horaires">
+        <h1>Horaires</h1>
+        {% for d in page.hours %}
+        <h2>{{ d.day }}</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Horaire</th>
+              <th>Cours</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for a in d.activities %}
+            <tr>
+              <td>{{a.hours}}</td>
+              <td>{{a.description}}</td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+        {% endfor %}
+      </section>
       {% if page.notification %}
       <div id="notification">
         <div>{% include layout/svgs/warning.svg %}</div>
