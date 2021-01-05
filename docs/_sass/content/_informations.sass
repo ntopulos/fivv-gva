@@ -9,7 +9,7 @@ $info-width: 740px
   #cours-essai
     width: $info-width
     max-width: 100%
-    margin: 10vh auto 15vh
+    margin: 10vh auto 8vh
     background-color: rgba(255,255,255,.5)
     box-sizing: border-box
     @include content-tile
@@ -39,7 +39,6 @@ $info-width: 740px
   display: flex
   justify-content: center
 
-
   @media (min-width: $bkpt-large)
     justify-content: flex-end
 
@@ -53,12 +52,14 @@ $info-width: 740px
 
   .foldable
     background-color: rgba(255,255,255,.8)
-    margin-bottom: $content-padding
     box-sizing: border-box
     @include content-tile
 
-    @media (min-width: $bkpt-medium)
-      margin-bottom: $content-padding / 2
+    &:not(:last-child)
+      margin-bottom: $content-padding-relative
+
+      @media (min-width: $bkpt-medium)
+        margin-bottom: $content-padding-relative / 2
 
     h2
       position: relative
@@ -72,7 +73,7 @@ $info-width: 740px
     & > div
 
       & > *:first-child
-        padding-top: $content-padding
+        padding-top: $content-padding-relative
         margin-top: 0
 
       // Tables h-scroll
@@ -85,13 +86,13 @@ $info-width: 740px
       position: absolute
       transition: transform $time-base
       right: calc(-1*(#{$body-padding} / 2))
-      bottom: calc(-1*(#{$content-padding} - 4px))
+      bottom: calc(-1*(#{$content-padding-relative} - 4px))
 
       @media (min-width: $bkpt-small)
-        bottom: calc(-1*(#{$content-padding} * 2/3))
+        bottom: calc(-1*(#{$content-padding-relative} * 2/3))
 
       @media (min-width: $bkpt-medium)
-        right: calc(-1*(#{$content-padding} - 4px))
+        right: calc(-1*(#{$content-padding-relative} - 4px))
         top: -4px
 
     &.open

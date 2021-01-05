@@ -54,6 +54,9 @@ h1, h2, h3
 img
   max-width: 100%
 
+abbr
+  cursor: help
+
 table
   width: 100%
   font-weight: lighter
@@ -109,51 +112,31 @@ body > section
   position: relative
   justify-content: center
   align-items: center
-
-  // @media (min-width: $bkpt-medium)
   min-height: 100vh
 
   // next & top
-  $padding: .2em
-
   & > a
-    $height: 1.3em
+    $padding: .2em
+    $height: 30px
     position: absolute
     bottom: calc(5vh - 1 / 2 * (#{$height} + #{$padding}))
-    opacity: .1
+    opacity: .15
     transition: all $time-base
     display: none
     height: $height
-    left: 50%
-    right: 50%
+    padding-bottom: $padding
+
+    svg
+      height: $height
+      transform: rotate(90deg)
 
     @media (min-height: 376px)
       display: block
 
     &:hover, &:focus
-      opacity: .3
-
-    svg
-      height: $height
-
-  // next
-  &:not(:last-of-type) > a
-    padding-bottom: $padding
-
-    &:hover, &:focus
+      opacity: .4
       padding-top: $padding
       padding-bottom: 0
-
-  // top
-  &:last-of-type > a
-    padding-top: $padding
-
-    &:hover, &:focus
-      padding-top: 0
-      padding-bottom: $padding
-
-    svg
-      transform: rotate(180deg)
 
   h1
     text-align: center
@@ -172,23 +155,22 @@ body > section
 footer
   background-color: $color-darker-red
   color: $color-light
-  font-size: .95em
+  font-size: .85em
+  position: relative
 
   @media (min-width: $bkpt-small)
     text-align: left
 
-
   & > div
     padding-top: 5vh
     padding-bottom: 5vh
-
     display: grid
+    grid-template-columns: repeat(2,auto)
 
     div:last-child
-      margin-top: 5vh
-      font-size: .8em
-      text-align: center
-
+      // margin-top: 5vh
+      // font-size: .8em
+      text-align: right
 
   a
     color: inherit
@@ -201,20 +183,47 @@ footer
   ul
     @include not-a-list
     display: flex
-    justify-content: center
+    justify-content: left
     flex-direction: column
 
     @media (min-width: $bkpt-small)
       flex-direction: row
 
       li:not(:last-child)
-        margin-right: 2em
+        margin-right: 1em
 
         &:after
           content: '|'
-          margin-left: 2em
+          margin-left: 1em
           opacity: .5
 
     @media (max-width: $bkpt-small - 1px)
       li:not(:first-child)
         margin-top: .5em
+
+  & > a
+    $height: 40px
+    $padding: 5px
+    $total: $height + 2 * $padding
+    position: absolute
+    transition: all $time-base
+    display: block
+    right: $content-padding
+    top: - $total / 2
+    background: $color-darker-red
+    border: 3px solid #ece2d0
+    box-sizing: border-box
+    padding: $padding
+    border-radius: $total / 2
+
+    svg
+      display: block
+      height: $height * 2 / 3
+      transform: rotate(-90deg)
+      fill: #fff
+      opacity: .7
+      transition: all $time-base
+
+    &:hover, &:focus
+      svg
+        opacity: .9
