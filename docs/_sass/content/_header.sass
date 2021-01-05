@@ -218,7 +218,7 @@ header
             fill: $color-font-black
 
       li#facebook a
-        border: 1px solid $color-lighter
+        border: 1px solid rgba($color-lighter,.4)
         background-color: transparent
         transition: border $time-base
 
@@ -227,7 +227,7 @@ header
           transition: fill $time-base
 
         &:hover, &:focus
-          border-color: rgba($color-lighter,.8)
+          border-color: rgba($color-lighter,.3)
 
           svg
             fill: $color-lighter
@@ -251,10 +251,10 @@ header
 
       @media (min-width: $bkpt-medium)
         margin-bottom: 0
+        padding: 2em
 
       @media (min-width: $bkpt-large)
         margin-top: calc(#{$h2-foot-size} + #{$h2-margin-bottom})
-        padding: 2em
 
       h1
         font-size: 1.5em
