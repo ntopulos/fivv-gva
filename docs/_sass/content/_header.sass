@@ -4,6 +4,7 @@
   color: $color-font-header
   box-sizing: border-box
 
+
 /* Page Header */
 header
   display: grid
@@ -134,10 +135,14 @@ header
     box-sizing: border-box
     margin-top: 1em
 
+    @media (min-width: $bkpt-medium)
+      grid-template-columns: auto auto
+      grid-template-areas: 'notification notification' 'introduction introduction' 'hours links'
+      grid-gap: 5vh
+
     @media (min-width: $bkpt-large)
       grid-template-columns: 3fr 2fr
       grid-template-areas: 'notification notification' 'introduction hours' 'links hours'
-      grid-gap: 5%
 
     #introduction
       grid-area: introduction
@@ -165,33 +170,37 @@ header
     ul
       grid-area: links
       $square-size: 160px
-
       @include not-a-list
       display: flex
       flex-direction: column
+      flex-wrap: wrap
 
       li
+        flex-grow: 1
+
+
+        @media (min-width: $bkpt-large)
+          flex-grow: 0
 
         &:not(:last-child)
           margin-bottom: 5vh
 
-          @media (min-width: $bkpt-small)
+          @media (min-width: $bkpt-large)
             margin-bottom: 0
 
         a
           $tile-padding: 1.2rem
-
+          height: 100%
           display: block
           box-sizing: border-box
           background-color: $color-darker-red
-          height: $square-size
           padding: $tile-padding
           position: relative
           transition: color $time-base*2, background-color $time-base*2
-          font-size: 1.2em
+          font-size: 1em
 
-          @media (min-width: $bkpt-small)
-            font-size: 1em
+          @media (min-width: $bkpt-large)
+            height: $square-size
 
           svg
             fill: $color-lighter
@@ -216,7 +225,7 @@ header
         svg
           transform: rotate(-45deg)
 
-      @media (min-width: $bkpt-small)
+      @media (min-width: $bkpt-large)
         flex-direction: row
 
         li:not(:last-child)
@@ -232,9 +241,11 @@ header
       flex: 1
       margin-bottom: 5vh
 
+      @media (min-width: $bkpt-medium)
+        margin-bottom: 0
+
       @media (min-width: $bkpt-large)
         margin-top: calc(#{$h2-foot-size} + #{$h2-margin-bottom})
-        margin-bottom: 0
         padding: 2em
 
       h1
