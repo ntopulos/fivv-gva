@@ -44,16 +44,21 @@
     filter: brightness(85%)
 
   .play
-    height: 80px
-    width: 80px
+    $wh: 80px
+    height: $wh
+    width: $wh
     display: block
     left: 50%
     top: 50%
-    margin-left: -36px
-    margin-top: -36px
+    margin: 0
+    margin-left: -$wh / 2
+    margin-top: -$wh / 2
     position: absolute
     cursor: pointer
     z-index: 10
+    padding: 0
+    background: transparent
+    border: none
 
   circle
     fill: rgba(0,0,0,.3)

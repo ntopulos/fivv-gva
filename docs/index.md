@@ -62,7 +62,7 @@ contact:
       - +41 (0) 79 845 81 72
       - +33 (0) 6 01 41 91 14
     email: thaddeemieusset@gmail.com
-  arrival: "Arrivée par le chemin Buisson&nbsp;: tournez à gauche au bout du chemin, puis suivez les panneaux indiquant les salles de sport."
+  arrival: "Arrivée par le Chemin Buisson&nbsp;: tournez à gauche au bout du chemin, puis suivez les panneaux indiquant les salles de sport."
 banking-details:
   name: PostFinance Ltd
   iban: CH40 0900 0000 1741 2189 5
