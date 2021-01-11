@@ -7,14 +7,16 @@ If you need help to setup your own website for a FIVV venue, [contact me](https:
 
 ## Usage
 
-Use the `.md` files to edit the content.  
-To add a notification, uncomment the corresponding header in `index.md`.
+Use the `.md` files to edit the content.
+To add/remove the main notification, (un)comment the corresponding header in `index.md`.
+
 
 ## Developpement
 
 Local Jekyll compilation and web server:
 
     docker-compose up
+
 
 ## Production
 
