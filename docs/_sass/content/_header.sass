@@ -249,6 +249,20 @@ header
       flex: 1
       margin-bottom: 5vh
 
+
+      // Animation
+      @keyframes targeting
+        0%
+          background-color: rgba(lighten($color-main-red,10%),1)
+        50%
+          background-color: rgba(lighten($color-main-red,10%),.8)
+        100%
+          background-color: rgba(lighten($color-main-red,10%),.4)
+
+      &:target
+          animation: targeting 1s ease-in
+
+
       @media (min-width: $bkpt-medium)
         margin-bottom: 0
         padding: 2em
